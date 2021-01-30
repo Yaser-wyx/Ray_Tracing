@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ray Tracing</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+<body>
+<canvas id="output"></canvas>
+</body>
+
+<script>
+    const Ajax = function () {
+        $.getJSON("data.json", function (renderArrayData) {
+            renderDataToCanvas(renderArrayData)
+        });
+    }();
+    function renderDataToCanvas(renderArrayData) {
+        const CANVAS_WIDTH = 1980
+        const CANVAS_HEIGHT = 1080
+        let canvas = document.getElementById("output")
+        let ctx = canvas.getContext('2d')
+        canvas.width = CANVAS_WIDTH
+        canvas.height = CANVAS_HEIGHT
+        let dataImage = ctx.createImageData(CANVAS_WIDTH,CANVAS_HEIGHT)
+        if (dataImage.data.set){
+            dataImage.data.set(renderArrayData)
+        }
+        ctx.putImageData(dataImage, 0, 0)
+    }
+
+</script>
+
+</html>

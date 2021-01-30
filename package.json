@@ -1,0 +1,29 @@
+{
+  "name": "ray_tracing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "yaser",
+  "license": "MIT",
+  "scripts": {
+    "dev": " ts-node ./src/main.ts",
+    "devTest": "ts-node test/test.js",
+    "build": "webpack",
+    "render": "node ./out/main.js",
+    "build&render": "npm run build && npm run render"
+  },
+  "dependencies": {
+    "@types/assert": "^1.5.4",
+    "@types/node": "^14.14.22",
+    "awesome-typescript-loader": "^5.2.1",
+    "colors": "^1.4.0",
+    "gpu.js": "^2.11.2",
+    "single-line-log": "^1.1.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^3.2.2",
+    "zrender": "^4.0.7"
+  },
+  "devDependencies": {
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.2.3"
+  }
+}
